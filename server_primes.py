@@ -152,3 +152,5 @@ while master_index<finish:
 				
 	time.sleep(.05)
 
+# Secure transfer
+# scp ~/run user@127.0.0.1:beowulf/ && ssh user@127.0.0.1 'chmod +x ~/beowulf/run' && ssh bitnami@127.0.0.1 '~/beowulf/run'
