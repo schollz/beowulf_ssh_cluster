@@ -6,7 +6,7 @@ This program is a example of a [Beowulf cluster](http://en.wikipedia.org/wiki/Be
 
 ## Uses 
 
-- Computation. This is not the optimal use of a Beowulf cluster since this is supposed to be a cluster of dilapidated computers. The example I've included here is a computational-use though, the computation of the first ten million primes.
+- Computation. This is not the optimal use of a Beowulf cluster since this is supposed to be a cluster of antiquated computers. The example I've included here is a computational-use though, the computation of the first ten million primes.
 
 - Web scraping. A Beowulf cluster is especially suited for scraping, since the bottleneck is mainly the connection time to the website. Thus, the web scraping with a Beowulf cluster will roughly scale with the number of computers (or cores per computers). If you do use this for a web scraper you might like to use Tor so you don't get blocked - I've included a code block that utilizes Tor. Note, if you do use this as a web scraper, be sure to read the Terms of Service and make sure to follow ```robots.txt``` as some sites do not allow web scraping (and be kind not to overload any servers with thousands of connections per second).
 
