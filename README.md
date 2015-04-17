@@ -32,7 +32,14 @@ The server sends a SSH command to run a command on the client computer. Do not s
 
 ### Tor
 
-I included the ability to add in Tor connections. The client script uses the first argument as a Tor flag. To use Tor you need to install tor ```apt-get install tor``` as well as PySocks ```pip install PySocks```.
+I included the ability to add in Tor connections. The client script uses the first argument as a Tor flag. To use Tor you need to install tor ```apt-get install tor``` as well as PySocks ```pip install PySocks``` on the client computers.
+
+Since Tor needs to run as a super user, you can create store your password on your client. Since its never a good idea to store the plaintext password, I suggest using base64. I.e. Type your password into ```~/pass``` and then
+
+> base64 ~/pass > ~/pass2
+> mv ~/pass2 ~/pass
+
+The program is then set to use this password for running the Tor connections.
 
 ## To-do
 
