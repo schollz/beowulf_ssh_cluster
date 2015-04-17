@@ -85,7 +85,7 @@ logging.basicConfig(level=logging.DEBUG,
 runAndWait('mkdir beowulf',clients)
 
 # Second, send the file to run
-sendFileAndWait('client.py','beowulf',clients)
+sendFileAndWait('client_primes.py','beowulf',clients)
 
 # Start up tor (if needed)
 #runAndWait('base64 -d ~/pass | sudo -S /etc/init.d/tor restart',clients)
@@ -139,7 +139,7 @@ while master_index<finish:
 
 			# Send the next set
 			# Firt argument is Tor flag
-			remote_cmd = 'python beowulf/client.py 0 ' + ' '.join(str(x) for x in range(master_index,master_index+blocks))
+			remote_cmd = 'python beowulf/client_primes.py 0 ' + ' '.join(str(x) for x in range(master_index,master_index+blocks))
 			cmd = "ssh "+clients[i]+" '"+remote_cmd+"'"
 			threads[i] = threading.Thread(target=worker, args=(cmd,i,))
 			threads[i].start()
