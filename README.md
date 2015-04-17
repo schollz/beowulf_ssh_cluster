@@ -1,8 +1,14 @@
 # Beowulf SSH cluster
 
-This program is meant to provide a simple solution to making a [Beowulf cluster](http://en.wikipedia.org/wiki/Beowulf_cluster) or so-called [Stone SouperComputer](http://www.extremelinux.info/stonesoup/) with Python and SSH. The program included here is a skeleton of a real program and an example of what it can be used for. This example parses prime numbers, which is not the optimal application of this cluster since this is meant to be run on computers relics. 
+## Introduction 
 
-The optimal use of this proram is probably a web scrapper or web spider because bottleneck for grabbing websites is usually connection time to the website and downloading the site. Thus this can scale pretty well with number of computers, regardless of processing speed. Thats why this example includes a code block for including Tor. If you do use this for a web scraper you might like to use Tor so you don't get blocked. Also, if you do use this as a web scraper, be sure to read the Terms of Service and make sure to follow ```robots.txt``` as some sites do not allow web scraping (and be kind not to overload any servers wiht thousands of connections per second).
+This program is a example of a [Beowulf cluster](http://en.wikipedia.org/wiki/Beowulf_cluster) or so-called [Stone SouperComputer](http://www.extremelinux.info/stonesoup/) with Python and SSH. In this example, the server connects to any number of client computers via SSH and asks them to help compute some problem. Once a client finishes, the client sends back to the result to the server which stores the result on its own disk. The server then sends that client a new set of computations to finish, and this repeats until all the computations are finished. The client never has to store any information. The server is able to keep track of the client threads, the overall productivity and productivity of each client, and the entirety of the finished results.
+
+## Uses 
+
+- Computation. This is not the optimal use of a Beowulf cluster since this is supposed to be a cluster of dilapidated computers. The example I've included here is a computational-use though, the computation of the first ten million primes.
+
+- Web scraping. A Beowulf cluster is especially suited for scraping, since the bottleneck is mainly the connection time to the website. Thus, the web scraping with a Beowulf cluster will roughly scale with the number of computers (or cores per computers). If you do use this for a web scraper you might like to use Tor so you don't get blocked - I've included a code block that utilizes Tor. Note, if you do use this as a web scraper, be sure to read the Terms of Service and make sure to follow ```robots.txt``` as some sites do not allow web scraping (and be kind not to overload any servers with thousands of connections per second).
 
 # How it works
 
