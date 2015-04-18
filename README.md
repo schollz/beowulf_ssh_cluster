@@ -42,13 +42,17 @@ The server computer needs to have SSH access to each of the computers in the clu
 
 To generate a SSH key on the server computer, simply use
 
-> ssh-keygen
+```bash
+ssh-keygen
+```
 
 And just press enter/enter/enter.
 
 Then copy the ssh key to all your connected computers using
 
-> ssh-copy-id user@address
+```bash
+ssh-copy-id user@address
+```
 
 And type in your password. That should be the only time you need to type in your password. Then, if the clients have the right python libraries, you can run the server program ```python server_primes.py```, to automatically make the directories and transfer the client program and run the client program.
 
@@ -60,9 +64,10 @@ I included the ability to add in Tor connections. The client script uses the fir
 
 Since Tor needs to run as a super user, you can create store your password on your client. Since its never a good idea to store the plaintext password, I suggest using base64. I.e. Type your password into ```~/pass``` and then
 
-> base64 ~/pass > ~/pass2
-
-> mv ~/pass2 ~/pass
+```bash
+base64 ~/pass > ~/pass2
+mv ~/pass2 ~/pass
+```
 
 The program is then set to use this password for running the Tor connections.
 
