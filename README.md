@@ -12,20 +12,17 @@ This program is a example of a [Beowulf cluster](http://en.wikipedia.org/wiki/Be
 
 ### Computation. 
 
-Originally, a Beowulf cluster was used for computation. There are many more ways of getting speed out of multiple computers (like [here](http://www.mersenne.org/), or [here](https://folding.stanford.edu/)), so this is not the optimal use of a Beowulf cluster. This is a cluster of antiquated computers, afterall, so most of them will be slow. 
+Originally, a Beowulf cluster was used for computation. There are many *better* ways of getting speed out of multiple computers (like [here](http://www.mersenne.org/), or [here](https://folding.stanford.edu/)), so this is not the optimal use of a Beowulf cluster. This is a cluster of antiquated computers, afterall, so most of them will be slow. 
 
-The example I've included here is a computational-use though, the computation of the first ten million primes. As an example of the disparity between computers, here is a plot of the rate of prime searching for the computers in my cluster:
+However, the example I've included here is a computational-use - the computation of the first ten million primes. As an example of the disparity between computers when using a Beowulf cluster of old and new, here is a plot of the rate of prime searching for the computers in my cluster:
 
 ![Disparity between speeds of computation](https://rpiai.files.wordpress.com/2015/04/primes_per_second.png "Disparity between speeds of computation")
 
-
-As you can see, you'd need about five 10-year-old computers to equivalate a single modern desktop. Its probably just better to buy a desktop if this is what you want.
-
-
+As you can see, you'd need about five 10-year-old computers to equivalate a single modern desktop. Its probably just better to buy a desktop if this is what you want. 
 
 ### Web scraping. 
 
-A Beowulf cluster is especially suited for scraping, since the bottleneck is mainly the connection time to the website. Thus, the web scraping with a Beowulf cluster will roughly scale with the number of computers (or cores per computers). If you do use this for a web scraper you might like to use Tor so you don't get blocked - I've included a code block that utilizes Tor. Here is a plot of my results from the same computers I used above for scraping a website:
+A Beowulf cluster is especially suited for scraping, since the bottleneck is mainly the connection time to the website. Thus, the web scraping with a Beowulf cluster will roughly scale with the number of computers (or cores per computers). If you do use this for a web scraper you might like to use Tor so you don't get blocked - I've included a code block that utilizes Tor. Here is a plot of my results from the same computers I used above for scraping a website with and without Tor:
 
 ![Sites per minute per computer](https://rpiai.files.wordpress.com/2015/04/sites_per_minute.png "Sites per minute per computer")
 
