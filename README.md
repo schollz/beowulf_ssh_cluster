@@ -1,14 +1,41 @@
 # Beowulf SSH cluster
 
+> *"He has thirty men’s heft of grasp in the gripe of his hand, the bold-in-battle. Blessed God out of his mercy this man hath sent to Danes of the West, as I ween indeed, against horror of Grendel"* - Beowulf
+
+![Alt text](https://rpiai.files.wordpress.com/2015/04/0412151720.jpg "Optional title")
+
 ## Introduction 
 
 This program is a example of a [Beowulf cluster](http://en.wikipedia.org/wiki/Beowulf_cluster) or so-called [Stone SouperComputer](http://www.extremelinux.info/stonesoup/) with Python and SSH. In this example, the server connects to any number of client computers via SSH and asks them to help compute some problem. Once a client finishes, the client sends back to the result to the server which stores the result on its own disk. The server then sends that client a new set of computations to finish, and this repeats until all the computations are finished. The client never has to store any information. The server is able to keep track of the client threads, the overall productivity and productivity of each client, and the entirety of the finished results.
 
 ## Uses 
 
-- Computation. This is not the optimal use of a Beowulf cluster since this is supposed to be a cluster of antiquated computers. The example I've included here is a computational-use though, the computation of the first ten million primes.
+### Computation. 
 
-- Web scraping. A Beowulf cluster is especially suited for scraping, since the bottleneck is mainly the connection time to the website. Thus, the web scraping with a Beowulf cluster will roughly scale with the number of computers (or cores per computers). If you do use this for a web scraper you might like to use Tor so you don't get blocked - I've included a code block that utilizes Tor. Note, if you do use this as a web scraper, be sure to read the Terms of Service and make sure to follow ```robots.txt``` as some sites do not allow web scraping (and be kind not to overload any servers with thousands of connections per second).
+Originally, a Beowulf cluster was used for computation. There are many more ways of getting speed out of multiple computers (like [here](http://www.mersenne.org/), or [here](https://folding.stanford.edu/)), so this is not the optimal use of a Beowulf cluster. This is a cluster of antiquated computers, afterall, so most of them will be slow. 
+
+The example I've included here is a computational-use though, the computation of the first ten million primes. As an example of the disparity between computers, here is a plot of the rate of prime searching for the computers in my cluster:
+
+![Disparity between speeds of computation](https://rpiai.files.wordpress.com/2015/04/primes_per_second.png "Disparity between speeds of computation")
+
+
+As you can see, you'd need about five 10-year-old computers to equivalate a single modern desktop. Its probably just better to buy a desktop if this is what you want.
+
+
+
+### Web scraping. 
+
+A Beowulf cluster is especially suited for scraping, since the bottleneck is mainly the connection time to the website. Thus, the web scraping with a Beowulf cluster will roughly scale with the number of computers (or cores per computers). If you do use this for a web scraper you might like to use Tor so you don't get blocked - I've included a code block that utilizes Tor. Here is a plot of my results from the same computers I used above for scraping a website:
+
+![Sites per minute per computer](https://rpiai.files.wordpress.com/2015/04/sites_per_minute.png "Sites per minute per computer")
+
+For this purpose, the slowest, older computers are only about two times slower than he fastest, newest computers. And by combining their power, you can basically recover the entirity of their might as shown by the actual sites per minute gathered by the cluster versus the sum of individual components:
+
+![Sites per minute per computer sum vs actual](https://rpiai.files.wordpress.com/2015/04/sum_total_vs_actual_total.png "Sites per minute per computer sum vs actual")
+
+Of course, you'll also see that Tor will slow you down quite a bit if you choose to use that extra security boost.
+
+**Note, if you do use this as a web scraper, be sure to read the Terms of Service and make sure to follow ```robots.txt``` as some sites do not allow web scraping (and be kind not to overload any servers with thousands of connections per second).**
 
 # How it works
 
